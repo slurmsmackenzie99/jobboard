@@ -59,4 +59,7 @@ fakt, że jeden kandydat może aplikować na kilka ofert" - zastosowano odpowied
 
 Wyszukiwarka - doczytałem dopiero pod przy pisaniu README pod koniec :p
 
+## Entity-relationship diagram
+![Validation](https://i.imgur.com/MjNCR97.png)
+
 
