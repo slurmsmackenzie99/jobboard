@@ -25,4 +25,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/jobs/{id}', [JobController::class, 'show'])->name('jobs.show');
 
 Route::get('/user/profile', [UserController::class, 'index']);
+
 Route::post('/user/profile/create', [UserController::class, 'store'])->name('profile.create');
+
+Route::post('/user/resume', [UserController::class, 'resume'])->name('resume');
