@@ -27,6 +27,11 @@
                 <div class="card-header">Apply</div>
 
                 <div class="card-body">
+                    @if (Session::has('message'))
+                            <div class='alert alert-success'>
+                                {{ Session::get('message') }}
+                            </div>
+                        @endif
                     <form action="{{route('apply', [$job->id])}}" method="POST">@csrf
                         <button class="btn btn-success" type="submit">Click here to apply</button>
                     </form>
