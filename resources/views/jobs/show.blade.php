@@ -27,7 +27,9 @@
                 <div class="card-header">Apply</div>
 
                 <div class="card-body">
-                    <button class="btn btn-success">Click here to apply</button>
+                    <form action="{{route('apply', [$job->id])}}" method="POST">@csrf
+                        <button class="btn btn-success" type="submit">Click here to apply</button>
+                    </form>
                 </div>
             </div>
         </div>
