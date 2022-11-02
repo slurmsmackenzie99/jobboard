@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\jobController;
+use App\Http\Controllers\UserController;
 
 
 /*
@@ -20,3 +21,8 @@ Route::get('/', [JobController::class, 'index']);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/jobs/{id}', [JobController::class, 'show'])->name('jobs.show');
+
+Route::get('/user/profile', [UserController::class, 'index']);
+Route::post('/user/profile/create', [UserController::class, 'store'])->name('profile.create');

@@ -18,7 +18,7 @@
                         <td>{{$job->company_name}}</td>
                         <td>{{$job->description}}</td>
                         <td>{{$job->created_at->diffForHumans()}}</td>
-                        <td> <button class='btn btn-success btn-ssm'>Apply</button></td>
+                        <td> <a href="{{route('jobs.show', [$job->id, $job] ) }}"><button class='btn btn-success btn-ssm'>Apply</button></a></td>
                     </tr>
                     @endforeach
                 </tbody>
