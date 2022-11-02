@@ -7,60 +7,56 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## Job Board - assignment for Epicode
+![Main Dashboard](https://i.imgur.com/OXomJH2.jpg)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Job Board to portal umożliwiający m.in przeszukiwanie oraz aplikowanie na oferty pracy. Funkcjonalność to auth, załączanie oraz resume w bazie danych, aplikowanie na oferty. Wprowadziłem walidację danych.
+![Validation](https://i.imgur.com/EUv2Mb4.jpg)
+![Validation](https://i.imgur.com/JSsdAu7.jpg)
+### Requirements
+Xampp (Apache, MySQL)
+PHP 8
+Node
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Installing
+1. Create a new folder `jobboard` and place in `xampp/htdocs/`.
+2. Download and unzip the file into `jobboard` dir.
+3. Run
+```bash 
+npm install
+npm run dev
+php artisan migrate
+php artisan db:seed
+```
+(Optional) 4. If you're on Windows add this to `httpd.vhosts.conf`
+```
+<VirtualHost job-board.com:80>
+    DocumentRoot "C:/xampp/htdocs/job-board/public"
+	DirectoryIndex index.php
+    ServerName job-board.com
+	<Directory  "C:/xampp/htdocs/job-board">
+	Options All
+	AllowOverride All
+	Require all granted  
+	</Directory>
+</VirtualHost>
+```
+And below to `hosts`
+```
+127.0.0.1 job-board.com
+```
+5. Run `artisan serve` if skipped 4th step.
+6. Edit `.env` file to configure with your database credentials.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
+## Spełnione requirements
+Struktura, relacje oraz zbudowane modele odpowiadają tym w wytycznych.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+"należy wziąć pod uwagę, że na jedną ofertę może aplikować wielu kandydatów, oraz
+fakt, że jeden kandydat może aplikować na kilka ofert" - zastosowano odpowiednią relację
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Niespełnione requirements
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Wyszukiwarka - doczytałem dopiero pod przy pisaniu README pod koniec :p
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
