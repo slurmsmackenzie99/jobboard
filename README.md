@@ -1,18 +1,11 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://i.imgur.com/FooJVQr.png" width="400" alt="Laravel Logo"></a></p>
 
 ## Job Board - assignment for Epicode
+> Screenshot of the homepage
 ![Main Dashboard](https://i.imgur.com/OXomJH2.jpg)
 
-Job Board to portal umożliwiający m.in przeszukiwanie oraz aplikowanie na oferty pracy. Funkcjonalność to auth, załączanie oraz resume w bazie danych, aplikowanie na oferty. Wprowadziłem walidację danych.
-![Validation](https://i.imgur.com/EUv2Mb4.jpg)
-![Validation](https://i.imgur.com/JSsdAu7.jpg)
+Job Board to portal umożliwiający m.in przeszukiwanie oraz aplikowanie na oferty pracy. Funkcjonalność to autoryzacja, załączanie resume w bazie danych, aplikowanie na oferty. Wprowadzono walidację danych takich jak email czy numer telefonu.
+
 ### Requirements
 Xampp (Apache, MySQL)
 PHP 8
@@ -23,6 +16,8 @@ Node
 2. Download and unzip the file into `jobboard` dir.
 3. Run
 ```bash 
+cd jobboard/
+composer install
 npm install
 npm run dev
 php artisan migrate
@@ -55,11 +50,20 @@ Struktura, relacje oraz zbudowane modele odpowiadają tym w wytycznych.
 "należy wziąć pod uwagę, że na jedną ofertę może aplikować wielu kandydatów, oraz
 fakt, że jeden kandydat może aplikować na kilka ofert" - zastosowano odpowiednią relację
 
+Wymuszono konieczność załączenia pliku CV.
+
+![Validation](https://i.imgur.com/EUv2Mb4.jpg)
+![Validation](https://i.imgur.com/JSsdAu7.jpg)
+
 ## Niespełnione requirements
 
 Wyszukiwarka - doczytałem dopiero pod przy pisaniu README pod koniec :p
 
 ## Entity-relationship diagram
-![Validation](https://i.imgur.com/MjNCR97.png)
+![ER](https://i.imgur.com/Mbu4EDl.png)
+
+## Future development
+
+Za pierwszą poprawę architektury uważam stworzenie m.in. tabeli `Profile`, która służyłaby za profil aplikacji użytkownika oraz tabeli `Companies`, która umożliwia dodawanie nowych ofert pracy. Aby wprowadzić tabelę `Companies` dodać nowe pole w tabeli `users` - `seeker` jeżeli użytkownik poszukuje pracy, lub `employer` jeśli użytkownik chce stworzyć profil firmy lub dodać nowe ogłoszenie.
 
 
