@@ -6,6 +6,10 @@
 
 Job Board to portal umożliwiający m.in przeszukiwanie oraz aplikowanie na oferty pracy. Funkcjonalność to autoryzacja, załączanie resume w bazie danych, aplikowanie na oferty. Wprowadzono walidację danych takich jak email czy numer telefonu.
 
+## Jak używać?
+
+Zarejestruj się, dodaj resume oraz podaj dodatkowe informacje aby zaktualizować profil oraz zaaplikuj na oferty.
+
 ### Requirements
 Xampp (Apache, MySQL)
 PHP 8
